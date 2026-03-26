@@ -1,0 +1,151 @@
+/* 自定义 CSS 文件 */
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --bg-light: #f8f9fa;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    scroll-behavior: smooth;
+    color: #333;
+}
+
+/* 导航栏样式 */
+.navbar {
+    background-color: rgba(44, 62, 80, 0.95) !important;
+    backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+    letter-spacing: 1px;
+}
+
+/* 首屏大图区域 */
+.hero-section {
+    height: 100vh;
+    background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('assets/hero_bg.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    padding-top: 76px; /* 补偿固定的导航栏高度 */
+}
+
+/* 标题样式 */
+.section-title {
+    color: var(--primary-color);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+.section-title-center {
+    color: var(--primary-color);
+    position: relative;
+    display: inline-block;
+}
+
+.section-title-center::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -12px;
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+/* 文本排版 */
+.experience-text p {
+    line-height: 1.8;
+    font-size: 1.05rem;
+    margin-bottom: 1.2rem;
+    text-align: justify;
+}
+
+.experience-text p:first-of-type {
+    font-size: 1.15rem;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+/* 图片特效 */
+.image-wrapper {
+    position: relative;
+}
+
+.image-hover {
+    transition: transform 0.5s ease;
+}
+
+.image-wrapper:hover .image-hover {
+    transform: scale(1.05);
+}
+
+/* 成就卡片 */
+.bg-gradient-primary {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+}
+
+.achievement-card {
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important;
+}
+
+.achievement-img {
+    transition: transform 0.3s;
+    max-height: 400px;
+    object-fit: contain;
+}
+
+.achievement-img:hover {
+    transform: scale(1.02);
+}
+
+/* 统计数据 */
+.achievement-stat h4 {
+    font-size: 2.5rem;
+    margin-bottom: 0.2rem;
+}
+
+.achievement-stat span {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* 动画效果 */
+.animate-fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+.animate-fade-in-delayed {
+    animation: fadeIn 1s ease-out 0.5s both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
